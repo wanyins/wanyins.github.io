@@ -4,35 +4,9 @@
   
   
   <entry>
-    <title>deeplearningch3</title>
-    <link href="/2020/06/17/deeplearningch3/"/>
-    <url>/2020/06/17/deeplearningch3/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>deeplearningch2</title>
-    <link href="/2020/06/17/deeplearningch2/"/>
-    <url>/2020/06/17/deeplearningch2/</url>
-    
-    <content type="html"><![CDATA[<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3$\times$3矩阵表示的滤波器对一幅6$\times$6图像进行滤波（其中3$\times$3的矩阵被称为滤波器，也称为核）最终得到另一幅4$\times$4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p><p><img src="/img/deeplearning/deeplearningch1-1.jpg" srcset="/img/loading.gif" alt=""></p><p>从下图中可以看出为什么这个滤波器可以完成垂直边缘检测，对于原图而言，亮度高的像素分布在图片左侧，同样对于滤波器而言，像素深度从左到右依次递增，因此卷积运算的结果可以表示原图中间存在垂直边界。</p><p>对原图进行这样的卷积运算后可以得到一幅明显的表示中间分界的图像，但这个分界较宽，这是因为原图的尺寸太小，当原图的尺寸较大时可以得到一个更合理更明显的分界。</p><p><img src="/img/deeplearning/deeplearningch1-2.jpg" srcset="/img/loading.gif" alt=""></p><p>因此卷积运算可以用来提取特征。</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>deeplearningch1</title>
-    <link href="/2020/06/17/deeplearningch1/"/>
-    <url>/2020/06/17/deeplearningch1/</url>
+    <title>深度学习：卷积神经网络</title>
+    <link href="/2020/06/17/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <url>/2020/06/17/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
     
     <content type="html"><![CDATA[<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3$\times$3矩阵表示的滤波器对一幅6$\times$6图像进行滤波（其中3$\times$3的矩阵被称为滤波器，也称为核）最终得到另一幅4$\times$4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p><p><img src="/img/deeplearning/deeplearningch1-1.jpg" srcset="/img/loading.gif" alt=""></p><p>从下图中可以看出为什么这个滤波器可以完成垂直边缘检测，对于原图而言，亮度高的像素分布在图片左侧，同样对于滤波器而言，像素深度从左到右依次递增，因此卷积运算的结果可以表示原图中间存在垂直边界。</p><p>对原图进行这样的卷积运算后可以得到一幅明显的表示中间分界的图像，但这个分界较宽，这是因为原图的尺寸太小，当原图的尺寸较大时可以得到一个更合理更明显的分界。</p><p><img src="/img/deeplearning/deeplearningch1-2.jpg" srcset="/img/loading.gif" alt=""></p><p>因此卷积运算可以用来提取特征。</p>]]></content>
     
@@ -41,53 +15,6 @@
     <tags>
       
       <tag>deeplearning</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>helloworld</title>
-    <link href="/2020/05/16/helloworld-1/"/>
-    <url>/2020/05/16/helloworld-1/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2020/05/15/hello-world/"/>
-    <url>/2020/05/15/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>小清同学 考试加油！</title>
-    <link href="/2016/11/12/helloworld/"/>
-    <url>/2016/11/12/helloworld/</url>
-    
-    <content type="html"><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>！这是你的第一篇博文。</p><h2 id="听听不用去猜"><a href="#听听不用去猜" class="headerlink" title="听听不用去猜"></a>听听不用去猜</h2><p>还没来的不想猜</p><h2 id="创建一篇新博文"><a href="#创建一篇新博文" class="headerlink" title="创建一篇新博文"></a>创建一篇新博文</h2>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>demo</tag>
-      
-      <tag>hello</tag>
       
     </tags>
     
