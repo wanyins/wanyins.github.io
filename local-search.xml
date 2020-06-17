@@ -17,6 +17,32 @@
   
   
   <entry>
+    <title>deeplearningch1</title>
+    <link href="/2020/06/17/deeplearningch1/"/>
+    <url>/2020/06/17/deeplearningch1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3$\times$3矩阵表示的滤波器对一幅6$\times$6图像进行滤波（其中3$\times$3的矩阵被称为滤波器，也称为核）最终得到另一幅4$\times$4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p><p><img src="/img/deeplearning/deeplearningch1-1.jpg" srcset="/img/loading.gif" alt=""></p><p>从下图中可以看出为什么这个滤波器可以完成垂直边缘检测，对于原图而言，亮度高的像素分布在图片左侧，同样对于滤波器而言，像素深度从左到右依次递增，因此卷积运算的结果可以表示原图中间存在垂直边界。</p><p>对原图进行这样的卷积运算后可以得到一幅明显的表示中间分界的图像，但这个分界较宽，这是因为原图的尺寸太小，当原图的尺寸较大时可以得到一个更合理更明显的分界。</p><p><img src="/img/deeplearning/deeplearningch1-2.jpg" srcset="/img/loading.gif" alt=""></p><p>因此卷积运算可以用来提取特征。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>deeplearningch2</title>
+    <link href="/2020/06/17/deeplearningch2/"/>
+    <url>/2020/06/17/deeplearningch2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3$\times$3矩阵表示的滤波器对一幅6$\times$6图像进行滤波（其中3$\times$3的矩阵被称为滤波器，也称为核）最终得到另一幅4$\times$4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p><p><img src="/img/deeplearning/deeplearningch1-1.jpg" srcset="/img/loading.gif" alt=""></p><p>从下图中可以看出为什么这个滤波器可以完成垂直边缘检测，对于原图而言，亮度高的像素分布在图片左侧，同样对于滤波器而言，像素深度从左到右依次递增，因此卷积运算的结果可以表示原图中间存在垂直边界。</p><p>对原图进行这样的卷积运算后可以得到一幅明显的表示中间分界的图像，但这个分界较宽，这是因为原图的尺寸太小，当原图的尺寸较大时可以得到一个更合理更明显的分界。</p><p><img src="/img/deeplearning/deeplearningch1-2.jpg" srcset="/img/loading.gif" alt=""></p><p>因此卷积运算可以用来提取特征。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>helloworld</title>
     <link href="/2020/05/16/helloworld-1/"/>
     <url>/2020/05/16/helloworld-1/</url>
