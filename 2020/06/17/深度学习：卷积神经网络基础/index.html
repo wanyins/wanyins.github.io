@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>深度学习：卷积神经网络 - Hexo</title>
+  <title>深度学习：卷积神经网络基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      1.7k 字
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      18
        分钟
     </span>
   
@@ -207,7 +207,7 @@
               <p>边缘检测、Padding</p>
 <a id="more"></a>
 
-<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3×3矩阵表示的滤波器对一幅6×6图像进行滤波（其中3×3的矩阵被称为滤波器，也称为核）最终得到另一幅4×4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p>
+<h1 id="卷积神经网络基础"><a href="#卷积神经网络基础" class="headerlink" title="卷积神经网络基础"></a>卷积神经网络基础</h1><h2 id="一、边缘检测"><a href="#一、边缘检测" class="headerlink" title="一、边缘检测"></a>一、边缘检测</h2><p>使用以3×3矩阵表示的滤波器对一幅6×6图像进行滤波（其中3×3的矩阵被称为滤波器，也称为核）最终得到另一幅4×4的图像，其中的滤波器可以看做一个垂直边缘检测器，这个运算过程就是卷积运算。</p>
 <p><img src="/img/deeplearning/deeplearningch1-1.jpg" srcset="/img/loading.gif" alt=""></p>
 <p>如下图所示，将较大的正值看做像素颜色更浅，将较小的负值看做像素颜色更深，可以得到矩阵的图像表示，直观地体现了这个滤波器可以完成垂直边缘检测。对于原图而言，亮度高的像素分布在图片左侧，同样对于滤波器而言，像素深度从左到右依次递增，因此卷积运算的结果可以表示原图中间存在垂直边界。</p>
 <p>对原图进行这样的卷积运算后可以得到一幅明显的表示中间分界的图像，这个图像中间像素颜色较浅而两侧颜色较深，表示原图中对应着一个由明到暗的过渡，同时结果的分界区域较宽，这是因为原图的尺寸太小，当原图的尺寸较大时可以得到一个更合理更明显的分界。</p>
@@ -243,6 +243,24 @@
 <li>当f为奇数时，过滤器具有中心点，在计算机视觉中将更便于指出过滤器的位置。</li>
 </ol>
 <p><img src="/img/deeplearning/deeplearningch1-7.jpg" srcset="/img/loading.gif" alt=""></p>
+<h2 id="四、卷积步长"><a href="#四、卷积步长" class="headerlink" title="四、卷积步长"></a>四、卷积步长</h2><p>在之前的例子中都是使用步长为1(stride=1)，下图展示了当步长为2时的卷积过程。</p>
+<p>假如商不是整数，那么可以向下取整。也表示只在当蓝框中的所有元素都在图像中时才进行运算</p>
+<p><img src="/img/deeplearning/deeplearningch1-8.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>加入步长概念后的卷积规律如下：</p>
+<p><img src="/img/deeplearning/deeplearningch1-9.jpg" srcset="/img/loading.gif" alt=""></p>
+<h2 id="五、三维卷积"><a href="#五、三维卷积" class="headerlink" title="五、三维卷积"></a>五、三维卷积</h2><p>假设需要针对一幅RGB图像进行卷积，可视为三幅6×6图像的堆叠，为了对这样的图像进行特征提取，将它与一个三维的滤波器进行卷积，也就是说滤波器具有三层，三层这个概念在卷积神经网络中表示为通道数(channels)，而图像和滤波器的长宽分别对应于高(height)和宽(width)的概念，要求是图像和滤波器的通道数必须一致。</p>
+<p>用图中被正方体覆盖部分的原图像素与对应层级的滤波器进行对应相乘再相加，就得到输出的第一个数字，这也解释了为何输出不会分层。依次计算可以得到对应的输出。</p>
+<p>假设只需要对红色部分进行垂直边缘检测，可以将滤波器的第一层设置成之前例子中的样子，而其余两层可以全设置为0。</p>
+<p>假设只需要进行垂直边缘检测，而不关心颜色，可以将三层滤波器设置为同样的。</p>
+<p>选择不同的参数，可以得到不同的特征提取器。</p>
+<p>当输入具有特定的高、宽、通道数，可以选择任意高、宽的滤波器，但滤波器的通道数必须与输入一致。</p>
+<p><img src="/img/deeplearning/deeplearningch1-10.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>一个6×6×3的图像与3×3×3的滤波器进行卷积，最终得到了4×4的二维输出。</p>
+<p><img src="/img/deeplearning/deeplearningch1-11.jpg" srcset="/img/loading.gif" alt=""></p>
+<p>假设我们不仅希望得到垂直边缘，同时还希望得到水平边缘甚至45°，假设希望同时使用多个滤波器，那么应该如何解决呢？</p>
+<p>可以使用两个3×3×3来完成，其中一个进行垂直边缘检测，另一个进行水平边缘检测，将各自得到的二维结果堆叠成4×4×2的立方体，其中的2表示使用了两个不同的滤波器。</p>
+<p>其中，通道数也可称为深度(depth)</p>
+<p><img src="/img/deeplearning/deeplearningch1-12.jpg" srcset="/img/loading.gif" alt=""></p>
 
             </article>
             <hr>
@@ -273,6 +291,12 @@
                   <div class="post-prev col-6">
                     
                     
+                      <a href="/2020/06/18/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深度学习：卷积神经网络</span>
+                        <span class="visible-mobile">前の記事</span>
+                      </a>
+                    
                   </div>
                   <div class="post-next col-6">
                     
@@ -290,7 +314,7 @@
     
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;ディレクトリ</p>
   <div id="tocbot"></div>
 </div>
 
@@ -317,7 +341,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">検索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -326,7 +350,7 @@
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+                 for="local-search-input">キーワード</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -411,7 +435,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "深度学习：卷积神经网络&nbsp;",
+        "深度学习：卷积神经网络基础&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
